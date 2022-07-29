@@ -26,7 +26,7 @@ function getTitleAuto($id)
     }
 }
 
-//Обычно в формах указыввется action! Я не делал для того, чтобы не создавать лишние страницы.
+//Обычно в формах указывается action! Я не делал для того, чтобы не создавать лишние страницы.
 if (isset($_POST['title']) AND !empty($_POST['title'])) {
     $sql = "INSERT INTO cars (title, description, engine, fuel, price) VALUES (:title, :description, :engine, :fuel, :price)";
     $stmt = $dbh->prepare($sql);
@@ -40,7 +40,6 @@ if (isset($_POST['title']) AND !empty($_POST['title'])) {
 }
 
 if (isset($_POST['name']) AND !empty($_POST['name'])) {
-var_dump($_POST);
     $sql = "INSERT INTO old_owners (name, surname, cars_id) VALUES (:name, :surname, :cars_id)";
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':name', $_POST['name']);
